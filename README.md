@@ -34,7 +34,8 @@
 
 - 算法代码目录
 - A2C* 为算法代码
-  - 
+  - `A2C_pertrain*.py`为在线调整算法
+  - `A2C_util_pertrain.py`为离线训练代码
 - Adares 为对比算法代码
 
 ## 部署说明：
@@ -43,8 +44,10 @@
 2. 通过virt-manager虚拟机管理工具创建一定数量的虚拟机，不要使用virt-install命令创建，会导致读取不到网卡信息
 3. 通过ssh进入虚拟机，获取ip地址和mac地址
 4. 在虚拟机内部安装qemu
-5. 将 `kvm-guest` 目录下文件放在虚拟机内部，修改 `benchmark_test.py` 文件中 `script_type` 字段对应的 `dacappo` 测试程序项目
-6. 将 `kvm-host` 放置在主机相应目录下，
+5. 下载 dacapo benchmark测试 jar 包
+6. 将 `kvm-guest` 目录下文件放在虚拟机内部，修改 `benchmark_test.py` 文件中 `script_type` 字段对应的 `dacappo` 测试程序项目
+7. 将 `kvm-host` 放置在主机相应目录下，修改`A2C_pertrain.py`与`A2C_util_pertrain.py`中所有需要虚拟机名称、ip地址、网卡名称和mac地址的位置
+8. 安装pytorch，一般需要安装anaconda方便管理环境
 
 
 ## 测试步骤
